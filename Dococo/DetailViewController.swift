@@ -465,7 +465,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             //ユーザーからターゲットに送ったCocoのPFObject
             let cell : UserCocoCell = tableView.dequeueReusableCellWithIdentifier("UserCocoCell") as UserCocoCell
             //MARK: - 住所の取得
-            cell.messageLabel?.text = "\(self.title)にCocoを送りました"
+            //cell.messageLabel?.text = "\(self.title)にCocoを送りました"
             var point = post.objectForKey("point") as PFGeoPoint
             CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point.latitude, longitude: point.longitude
                 ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
@@ -486,7 +486,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             println("user Doco")
             //ユーザーからターゲットに送ったDocoのPFObject
             let cell : UserDocoCell = tableView.dequeueReusableCellWithIdentifier("UserDocoCell") as UserDocoCell
-            //cell.messageLabel?.text = "\(self.title)にDocoを送りました"
+            cell.messageLabel?.text = "\(self.title!)にDocoを送りました"
             //cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             cell.userImageView.image = self.currentUserImage
 
@@ -496,8 +496,6 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             println("target coco")
             //ターゲットからユーザーに送ったCocoのPFObject
             let cell : TargetCocoCell = tableView.dequeueReusableCellWithIdentifier("TargetCocoCell") as TargetCocoCell
-            println("チェック")
-            //cell.messageLabel?.text = "\(self.title)からCocoが届きました"
             
             var point = post.objectForKey("point") as PFGeoPoint
             CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point.latitude, longitude: point.longitude
@@ -519,7 +517,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             //ターゲットからユーザーに送ったDocoのPFObject
             let cell : TargetDocoCell = tableView.dequeueReusableCellWithIdentifier("TargetDocoCell") as TargetDocoCell
             cell.userImageView.image = targetUserImage
-            //cell.messageLabel?.text = "\(self.title)からDocoが届きました"
+            cell.messageLabel?.text = "\(self.title!)からDocoが届きました"
             //cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             return cell
         }

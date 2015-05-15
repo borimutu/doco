@@ -28,6 +28,10 @@ class TargetCocoCell: UITableViewCell {
             userImageView.layer.cornerRadius = self.userImageView.frame.size.width/2
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
+            
+            self.addressLabel = UILabel(frame: CGRectMake(49.21/225.78*320, self.center.y-10, 166.0/225.78*320, 20))
+            self.addressLabel.numberOfLines = 2
+            self.addSubview(addressLabel)
             /*var selectedBackgroundView = UIView(frame: self.frame)
             selectedBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground5selected")!)
             self.selectedBackgroundView = selectedBackgroundView*/

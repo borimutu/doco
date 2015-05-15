@@ -11,7 +11,7 @@ import UIKit
 class TargetDocoCell: UITableViewCell {
     var timeLabel: UILabel!
     var userImageView: UIImageView!
-    var messageLabel: UILabel?
+    var messageLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +26,11 @@ class TargetDocoCell: UITableViewCell {
             userImageView.layer.cornerRadius = self.userImageView.frame.size.width/2
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
+            
+            self.messageLabel = UILabel(frame: CGRectMake(49.21/225.78*320, self.center.y-10, 166.0/225.78*320, 20))
+            self.messageLabel.numberOfLines = 2
+            self.addSubview(self.messageLabel)
+            
             
         }else if deviceWidth == 375{
             
