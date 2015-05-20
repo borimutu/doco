@@ -27,8 +27,12 @@ class TargetDocoCell: UITableViewCell {
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
             
+            var font:UIFont = UIFont(name: "ArialHebrew", size: 14.0)!
+
             self.messageLabel = UILabel(frame: CGRectMake(49.21/225.78*320, self.center.y-10, 166.0/225.78*320, 20))
-            self.messageLabel.numberOfLines = 2
+            self.messageLabel.numberOfLines = 1
+            self.messageLabel.font = font
+            self.messageLabel.adjustsFontSizeToFitWidth = true
             self.addSubview(self.messageLabel)
             
             
@@ -40,6 +44,13 @@ class TargetDocoCell: UITableViewCell {
             userImageView.layer.cornerRadius = self.userImageView.frame.size.width/2
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
+            
+            var font:UIFont = UIFont(name: "ArialHebrew", size: 14.0)!
+            self.messageLabel = UILabel(frame: CGRectMake(60.85/264.58*375, self.center.y-15, 188.5/264.58*375, 30))
+            self.messageLabel.numberOfLines = 1
+            self.messageLabel.adjustsFontSizeToFitWidth = true
+            self.messageLabel.font = font
+            self.addSubview(messageLabel)
             
         }else if deviceWidth == 414{
             //MARK: - iPhone6plusのとき

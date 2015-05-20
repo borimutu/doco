@@ -29,8 +29,11 @@ class TargetCocoCell: UITableViewCell {
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
             
-            self.addressLabel = UILabel(frame: CGRectMake(49.21/225.78*320, self.center.y-10, 166.0/225.78*320, 20))
-            self.addressLabel.numberOfLines = 2
+            var font:UIFont = UIFont(name: "ArialHebrew", size: 14.0)!
+            self.addressLabel = UILabel(frame: CGRectMake(49.21/225.78*320, self.center.y-15, 166.0/225.78*320, 30))
+            self.addressLabel.numberOfLines = 1
+            self.addressLabel.adjustsFontSizeToFitWidth = true
+            self.addressLabel.font = font
             self.addSubview(addressLabel)
             /*var selectedBackgroundView = UIView(frame: self.frame)
             selectedBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground5selected")!)
@@ -42,6 +45,14 @@ class TargetCocoCell: UITableViewCell {
             userImageView.layer.cornerRadius = self.userImageView.frame.size.width/2
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
+            
+            var font:UIFont = UIFont(name: "ArialHebrew", size: 14.0)!
+            //TODO: -
+            self.addressLabel = UILabel(frame: CGRectMake(60.85/264.58*375, self.center.y-15, 188.5/264.58*375, 30))
+            self.addressLabel.numberOfLines = 1
+            self.addressLabel.adjustsFontSizeToFitWidth = true
+            self.addressLabel.font = font
+            self.addSubview(addressLabel)
             /*var selectedBackgroundView = UIView(frame: self.frame)
             selectedBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground6selected")!)
             self.selectedBackgroundView = selectedBackgroundView*/

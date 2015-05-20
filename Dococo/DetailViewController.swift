@@ -472,7 +472,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                     if (error == nil && placemarks.count > 0) {
                         let placemark = placemarks[0] as CLPlacemark
                         let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)"
-                        cell.addressLabel.text = address
+                        cell.addressLabel.text = "\(address)にいます。"
                     }else{
                         println("住所取得の際にエラー発生")
                     }
@@ -486,7 +486,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             println("user Doco")
             //ユーザーからターゲットに送ったDocoのPFObject
             let cell : UserDocoCell = tableView.dequeueReusableCellWithIdentifier("UserDocoCell") as UserDocoCell
-            cell.messageLabel?.text = "\(self.title!)にDocoを送りました"
+            cell.messageLabel?.text = "\(self.title!)にDocoを送りました。"
             //cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             cell.userImageView.image = self.currentUserImage
 
@@ -503,7 +503,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                     if (error == nil && placemarks.count > 0) {
                         let placemark = placemarks[0] as CLPlacemark
                         let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)"
-                        cell.addressLabel.text = address
+                        cell.addressLabel.text = "\(address)にいます。"
                     }else{
                         println("住所取得の際にエラー発生")
                     }
@@ -517,7 +517,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             //ターゲットからユーザーに送ったDocoのPFObject
             let cell : TargetDocoCell = tableView.dequeueReusableCellWithIdentifier("TargetDocoCell") as TargetDocoCell
             cell.userImageView.image = targetUserImage
-            cell.messageLabel?.text = "\(self.title!)からDocoが届きました"
+            cell.messageLabel?.text = "\(self.title!)からDocoが届きました。"
             //cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             return cell
         }

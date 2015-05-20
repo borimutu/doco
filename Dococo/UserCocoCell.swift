@@ -31,8 +31,12 @@ class UserCocoCell: UITableViewCell {
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
             
+            var font:UIFont = UIFont(name: "ArialHebrew", size: 14.0)!
+            
             self.addressLabel = UILabel(frame: CGRectMake(17.0/225.78*320, self.center.y-10, 166.0/225.78*320, 20))
-            self.addressLabel.numberOfLines = 2
+            self.addressLabel.numberOfLines = 1
+            self.addressLabel.font = font
+            self.addressLabel.adjustsFontSizeToFitWidth =  true
             self.addSubview(self.addressLabel)
             
         }else if deviceWidth == 375{
@@ -45,6 +49,14 @@ class UserCocoCell: UITableViewCell {
             userImageView.layer.cornerRadius = self.userImageView.frame.size.width/2
             userImageView.clipsToBounds = true
             self.addSubview(userImageView)
+            
+            var font:UIFont = UIFont(name: "ArialHebrew", size: 14.0)!
+            self.addressLabel = UILabel(frame: CGRectMake(17.0/225.78*320, self.center.y-10, 166.0/225.78*320, 20))
+            self.addressLabel.numberOfLines = 1
+            self.addressLabel.font = font
+            self.addressLabel.adjustsFontSizeToFitWidth =  true
+            self.addSubview(self.addressLabel)
+            
         }else if deviceWidth == 414{
             //MARK: - iPhone6plusのとき
             self.backgroundColor = UIColor(patternImage: UIImage(named: "usercellbackground6plus")!)

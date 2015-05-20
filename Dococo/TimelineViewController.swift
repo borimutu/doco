@@ -104,8 +104,23 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
     
     //MARK: - Cocoボタンタップ時の挙動設定
     func cocobuttonTapped(button: UIButton) {
-        var object :PFObject = PFObject(className: "cocoFriends")
-        var friendsidArray: [String] = []
+        PFGeoPoint.geoPointForCurrentLocationInBackground { (point :PFGeoPoint?, error :NSError?) -> Void in
+            if (error == nil){
+                PFUser.currentUser()["point"] = point
+                PFUser.currentUser()["pointPostedAt"] = NSDate()
+                PFUser.currentUser().saveInBackgroundWithBlock({ (succeeded:Bool, error:NSError!) -> Void in
+                    if error == nil{
+                        println("保存成功")
+                        
+                    }else{
+                        println("保存失敗、エラー発生")
+                    }
+                })
+            }else{
+                println("エラー発生")
+            }
+        }
+        /*var friendsidArray: [String] = []
         for friend in friends!{
             friendsidArray.append(friend.objectId)
         }
@@ -135,7 +150,7 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
                     }
                 })
             }
-        }
+        }*/
     }
     
     func getPosts() {
@@ -196,7 +211,7 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println("cell for row at index")
+        /*println("cell for row at index")
         let cell : TargetCocoCell = tableView.dequeueReusableCellWithIdentifier("TargetCocoCell") as TargetCocoCell
         /*println(indexPath.row)
         var num = indexPath.row
@@ -207,6 +222,26 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
         //var username: AnyObject? = postUser?.objectForKey("name")
         //println("\(username)")
         //cell.addressLabel.text = postUser!.objectForKey("name") as? String
+        return cell*/
+        println("cell for row atindex")
+        let cell : FriendsTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendsTableViewCell") as FriendsTableViewCell
+        var friendData = friends![indexPath.row]
+        friendData.fetchInBackgroundWithBlock { (object :PFObject!, error :NSError!) -> Void in
+            var friend = object as PFUser!
+            cell.nameLabel.text = friend.objectForKey("name") as? String
+            var pictureFile: PFFile! = friend.objectForKey("profilePicture") as PFFile
+            pictureFile.getDataInBackgroundWithBlock({ (data:NSData!, error:NSError!) -> Void in
+                var pictureImage = UIImage(data: data)
+                cell.userImageView.image = pictureImage
+            })
+            //現在地情報があればマップに追加する
+            let point:PFGeoPoint = friend.objectForKey("place") as PFGeoPoint
+            let marker = GMSMarker(position: CLLocationCoordinate2DMake(point.latitude, point.longitude))
+            let postedAt: NSDate = friend.objectForKey("pointPostedAt") as NSDate
+            marker.snippet = self.formatter.stringFromDate(postedAt)
+            marker.map = self.mapView
+        }
+        self.activityIndicator.stopAnimating()
         return cell
     }
     
@@ -223,9 +258,7 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let marker = self.markers[indexPath.row]
-        self.mapView?.animateToLocation(marker.position)
-        self.mapView?.selectedMarker = marker
+        
     }
     
 }
