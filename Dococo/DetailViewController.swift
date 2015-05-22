@@ -419,7 +419,6 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println(posts.count)
         return posts.count
     }
     
@@ -566,6 +565,20 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                 println("エラー発生")
             }
         }
+    }
+    
+    //MARK: - Background fetchのメソッド
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        println("background fetch")
+        let now = NSDate()
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        
+        let string = formatter.stringFromDate(now)
+        
+        println(string)
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
 }
 

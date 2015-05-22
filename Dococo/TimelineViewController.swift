@@ -34,7 +34,7 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
         super.viewDidLoad()
         
         //MARK: - フレンドリストの取得
-        self.friends = PFUser.currentUser()!.objectForKey("friends") as? [PFUser]
+        self.friends = PFUser.currentUser().objectForKey("friends") as? [PFUser]
         
         //MARK: - MapViewの設置
         let navBarHeight:CGFloat? = self.parentNavigationController?.navigationBar.frame.size.height
@@ -65,16 +65,13 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
         self.view.addSubview(CocoButton!)
         
         //MARK: - tableview設置
-        tableView = UITableView(frame: CGRectMake(0, self.mapView!.frame.height, self.view.frame.size.width, self.view.frame.height-self.view.frame.height/2.5-65), style: UITableViewStyle.Grouped)
+        tableView = UITableView(frame: CGRectMake(0, self.mapView!.frame.maxY + statusBarHeight!, self.view.frame.size.width, self.view.frame.height-self.view.frame.height/2.5-65), style: UITableViewStyle.Grouped)
+        tableView.registerNib(UINib(nibName: "TargetCocoCell", bundle: nil), forCellReuseIdentifier: "TargetCocoCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.whiteColor()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
-        tableView.registerNib(UINib(nibName: "TargetCocoCell", bundle: nil), forCellReuseIdentifier: "TargetCocoCell")
-        tableView.registerNib(UINib(nibName: "UserCocoCell", bundle: nil), forCellReuseIdentifier: "UserCocoCell")
-
-        
         //MARK: - activityindicatorを表示
         activityIndicator = UIActivityIndicatorView(frame: CGRectMake(self.view.center.x-30, self.tableView.center.y-30, 60, 60))
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
@@ -111,6 +108,8 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
                 PFUser.currentUser().saveInBackgroundWithBlock({ (succeeded:Bool, error:NSError!) -> Void in
                     if error == nil{
                         println("保存成功")
+                        let marker: GMSMarker = GMSMarker(position: CLLocationCoordinate2DMake(point!.latitude, point!.longitude))
+                        marker.map = self.mapView
                         
                     }else{
                         println("保存失敗、エラー発生")
@@ -152,9 +151,20 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
             }
         }*/
     }
-    
+    //MARK: - 他のユーザーの最後の投稿を取得
     func getPosts() {
-        println("getposts")
+        println("get posts")
+        for friend:PFUser in friends!{
+            let point: PFGeoPoint = friend.objectForKey("point") as PFGeoPoint
+            println(point)
+            let marker: GMSMarker = GMSMarker(position: CLLocationCoordinate2DMake(point.latitude, point.longitude))
+            marker.map = self.mapView
+            marker.snippet = friend.objectForKey("name") as String
+            self.markers.append(marker)
+        }
+        self.view.addSubview(self.tableView)
+        self.tableView.reloadData()
+        /*println("getposts")
         var query :PFQuery = PFQuery(className: "cocoFriends")
         query.limit = 50
         //query.whereKey("toFriends", containsAllObjectsInArray: [PFUser.currentUser()])
@@ -193,24 +203,42 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
                 println("エラー発生")
                 self.refreshControl.endRefreshing()
             }
-        }
+        }*/
     }
     
     // MARK: - テーブルビューdatasourceメソッド
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        println("number of sections")
+        return friends!.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("number of rows")
-        if self.posts?.count == 0{
-        return 0
+        if friends != nil{
+            return 1
         }else{
-        return self.posts!.count
+            return 0
         }
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 76.5
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let friend:PFUser = friends![section]
+        return friend.objectForKey("name") as? String
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        println("cell for row at index")
         /*println("cell for row at index")
         let cell : TargetCocoCell = tableView.dequeueReusableCellWithIdentifier("TargetCocoCell") as TargetCocoCell
         /*println(indexPath.row)
@@ -223,38 +251,50 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
         //println("\(username)")
         //cell.addressLabel.text = postUser!.objectForKey("name") as? String
         return cell*/
-        println("cell for row atindex")
-        let cell : FriendsTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendsTableViewCell") as FriendsTableViewCell
+        /*let cell : FriendsTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendsTableViewCell") as FriendsTableViewCell
         var friendData = friends![indexPath.row]
         friendData.fetchInBackgroundWithBlock { (object :PFObject!, error :NSError!) -> Void in
+        var friend = object as PFUser!
+        cell.nameLabel.text = friend.objectForKey("name") as? String
+        var pictureFile: PFFile! = friend.objectForKey("profilePicture") as PFFile
+        pictureFile.getDataInBackgroundWithBlock({ (data:NSData!, error:NSError!) -> Void in
+        var pictureImage = UIImage(data: data)
+        cell.userImageView.image = pictureImage
+        })
+        //現在地情報があればマップに追加する
+        let point:PFGeoPoint = friend.objectForKey("place") as PFGeoPoint
+        let marker = GMSMarker(position: CLLocationCoordinate2DMake(point.latitude, point.longitude))
+        let postedAt: NSDate = friend.objectForKey("pointPostedAt") as NSDate
+        marker.snippet = self.formatter.stringFromDate(postedAt)
+        marker.map = self.mapView
+        }*/
+        let cell : TargetCocoCell = tableView.dequeueReusableCellWithIdentifier("TargetCocoCell") as TargetCocoCell
+        cell.userImageView.image = UIImage(named: "user_placeholder")
+        let marker:GMSMarker = self.markers[indexPath.section]
+        var friendData = friends![indexPath.section]
+        friendData.fetchInBackgroundWithBlock { (object :PFObject!, error :NSError!) -> Void in
             var friend = object as PFUser!
-            cell.nameLabel.text = friend.objectForKey("name") as? String
             var pictureFile: PFFile! = friend.objectForKey("profilePicture") as PFFile
             pictureFile.getDataInBackgroundWithBlock({ (data:NSData!, error:NSError!) -> Void in
                 var pictureImage = UIImage(data: data)
                 cell.userImageView.image = pictureImage
             })
-            //現在地情報があればマップに追加する
-            let point:PFGeoPoint = friend.objectForKey("place") as PFGeoPoint
-            let marker = GMSMarker(position: CLLocationCoordinate2DMake(point.latitude, point.longitude))
-            let postedAt: NSDate = friend.objectForKey("pointPostedAt") as NSDate
-            marker.snippet = self.formatter.stringFromDate(postedAt)
-            marker.map = self.mapView
         }
         self.activityIndicator.stopAnimating()
+        
+        //MARK: - 住所の取得
+        //cell.messageLabel?.text = "\(self.title)にCocoを送りました"
+        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: marker.position.latitude, longitude: marker.position.longitude
+            ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
+                if (error == nil && placemarks.count > 0) {
+                    let placemark = placemarks[0] as CLPlacemark
+                    let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)"
+                    cell.addressLabel.text = "\(address)にいます。"
+                }else{
+                    println("住所取得の際にエラー発生")
+                }
+        })
         return cell
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60.0
-    }
-    
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

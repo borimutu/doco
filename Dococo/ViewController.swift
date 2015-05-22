@@ -36,7 +36,7 @@ class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerD
         controllersArray.append(friendsTableViewcontroller)
         
         var timelineViewController : TimelineViewController? = self.storyboard?.instantiateViewControllerWithIdentifier("timeline") as? TimelineViewController
-        timelineViewController?.title = "タイムライン"
+        timelineViewController?.title = "オープン"
         timelineViewController?.parentNavigationController = self.navigationController
         controllersArray.append(timelineViewController!)
         
@@ -55,10 +55,10 @@ class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerD
             "menuHeight": 40.0,
             "menuItemWidth": self.view.frame.width/3,
             "selectedMenuItemLabelColor": UIColor.whiteColor(),
-            "unselectedMenuItemLabelColor": UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0),
+            "unselectedMenuItemLabelColor": UIColor(red: 54.0/255.0, green: 166.0/255.0, blue: 191.0/255.0, alpha: 1.0),
             "menuItemFont": UIFont(name: "HelveticaNeue-Medium", size: 15.0)!,
             "menuItemSeparatorRoundEdges": true,
-            "selectionIndicatorHeight": 2.0,
+            "selectionIndicatorHeight": 4.0,
             "menuItemWidthBasedOnTitleTextWidth": false,
             "menuItemSeparatorPercentageHeight": 0.1]
 

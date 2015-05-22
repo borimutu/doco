@@ -110,13 +110,11 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("number of rows")
         return friendsArray!.count
      }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        println("cell for row atindex")
         let cell : FriendsTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendsTableViewCell") as FriendsTableViewCell
         var friendData = friendsArray![indexPath.row]
         friendData.fetchInBackgroundWithBlock { (object :PFObject!, error :NSError!) -> Void in
@@ -126,6 +124,10 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
             pictureFile.getDataInBackgroundWithBlock({ (data:NSData!, error:NSError!) -> Void in
                 var pictureImage = UIImage(data: data)
                 cell.userImageView.image = pictureImage
+                var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                var imagesList = appDelegate.friendsImages
+                imagesList.append(pictureImage)
+                appDelegate.friendsImages = imagesList
             })
         }
         self.activityIndicator.stopAnimating()
@@ -133,7 +135,6 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        println("viewfor header")
         let headerView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 30))
         let titleLabel = UILabel(frame: CGRectMake(10, 0, 100, 30))
         titleLabel.text = "友達(\(self.friendsArray!.count))"
@@ -144,17 +145,14 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        println("height for row")
         return 50.0
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        println("height for footer")
         return 0
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        println("height for header")
         return 30
     }
     
@@ -170,7 +168,6 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        println("cell displayed")
     }
     
     // MARK: - セグエ

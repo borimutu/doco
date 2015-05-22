@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var message:String?
     var targetUser:PFUser?
     var friends :[String!] = []
+    var friendsImages :[UIImage!] = []
     var isFromSignup :Bool!
     var isFromLogin :Bool!
     var removableUser : PFUser?

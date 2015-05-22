@@ -13,7 +13,6 @@
 		6D1110381AEFE76800E407AD /* user_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1110371AEFE76800E407AD /* user_placeholder@2x.png */; };
 		6D11103A1AF07D0A00E407AD /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1110391AF07D0A00E407AD /* FriendsTableViewController.swift */; };
 		6D1D35851AFC8EC60019DC5B /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35841AFC8EC60019DC5B /* noimage.jpg */; };
-		6D1D35DB1B030BAC0019DC5B /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35D81B030BAC0019DC5B /* refresh@2x.png */; };
 		6D1D35DC1B030BAC0019DC5B /* userballoon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35D91B030BAC0019DC5B /* userballoon@2x.png */; };
 		6D1D35DD1B030BAC0019DC5B /* targetballoon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35DA1B030BAC0019DC5B /* targetballoon@2x.png */; };
 		6D353BBB1ADA1B040086A73D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BB91ADA1B040086A73D /* LoginViewController.swift */; };
@@ -23,6 +22,7 @@
 		6D353BD11ADB900A0086A73D /* FirststepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BCF1ADB900A0086A73D /* FirststepViewController.swift */; };
 		6D353BD51ADB90200086A73D /* SecondstepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BD31ADB90200086A73D /* SecondstepViewController.swift */; };
 		6D353BD81ADBB5ED0086A73D /* TextFieldEffects in Resources */ = {isa = PBXBuildFile; fileRef = 6D353BD71ADBB5ED0086A73D /* TextFieldEffects */; };
+		6D40A2581B0ECE5800378877 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D40A2571B0ECE5800378877 /* refresh@2x.png */; };
 		6D473A3C1AE627A7006C68FF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D473A3B1AE627A7006C68FF /* Crashlytics.framework */; };
 		6D48E1A01AD8DEA100884C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48E19F1AD8DEA100884C3A /* AppDelegate.swift */; };
 		6D48E1A21AD8DEA100884C3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48E1A11AD8DEA100884C3A /* ViewController.swift */; };
@@ -32,7 +32,6 @@
 		6D48E1B61AD8DEA100884C3A /* DococoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48E1B51AD8DEA100884C3A /* DococoTests.swift */; };
 		6D48E1C21AD8E21D00884C3A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D48E1BF1AD8E21D00884C3A /* close.png */; };
 		6D7630481AE48DA700430CF8 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7630471AE48DA700430CF8 /* AddFriendViewController.swift */; };
-		6D7725E51B060087005376D6 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7725E41B060087005376D6 /* refresh@2x.png */; };
 		6D7725E71B060093005376D6 /* targetballoon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7725E61B060093005376D6 /* targetballoon@2x.png */; };
 		6D7725E91B06009F005376D6 /* userballoon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7725E81B06009F005376D6 /* userballoon@2x.png */; };
 		6D7EC4F81ADD61B200364757 /* ThirdstepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7EC4F61ADD61B200364757 /* ThirdstepViewController.swift */; };
@@ -54,13 +53,7 @@
 		6DD8D95C1AE734C200C04BD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8D95B1AE734C200C04BD9 /* ProfileViewController.swift */; };
 		6DD8D95E1AE7358300C04BD9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8D95D1AE7358300C04BD9 /* SettingViewController.swift */; };
 		6DE1F99F1AD947B5002481E1 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE1F99E1AD947B5002481E1 /* ParseUI.framework */; };
-		6DE1F9AE1AD94B29002481E1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE1F9AD1AD94B29002481E1 /* InterfaceController.swift */; };
-		6DE1F9B01AD94B29002481E1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE1F9AF1AD94B29002481E1 /* NotificationController.swift */; };
-		6DE1F9B21AD94B29002481E1 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE1F9B11AD94B29002481E1 /* GlanceController.swift */; };
-		6DE1F9B41AD94B29002481E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9B31AD94B29002481E1 /* Images.xcassets */; };
 		6DE1F9B81AD94B29002481E1 /* Dococo WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9B71AD94B29002481E1 /* Dococo WatchKit App.app */; };
-		6DE1F9C01AD94B29002481E1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9BE1AD94B29002481E1 /* Interface.storyboard */; };
-		6DE1F9C21AD94B29002481E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9C11AD94B29002481E1 /* Images.xcassets */; };
 		6DE1F9C51AD94B29002481E1 /* Dococo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6DE1F9A81AD94B29002481E1 /* Dococo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6DE9FB471AE0ECAA00C03464 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE9FB441AE0ECAA00C03464 /* TwitterKit.framework */; };
 		6DE9FB481AE0ECAA00C03464 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9FB451AE0ECAA00C03464 /* TwitterKitResources.bundle */; };
@@ -132,7 +125,6 @@
 		6D1110371AEFE76800E407AD /* user_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_placeholder@2x.png"; sourceTree = "<group>"; };
 		6D1110391AF07D0A00E407AD /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		6D1D35841AFC8EC60019DC5B /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
-		6D1D35D81B030BAC0019DC5B /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		6D1D35D91B030BAC0019DC5B /* userballoon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userballoon@2x.png"; sourceTree = "<group>"; };
 		6D1D35DA1B030BAC0019DC5B /* targetballoon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetballoon@2x.png"; sourceTree = "<group>"; };
 		6D353BB91ADA1B040086A73D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +134,7 @@
 		6D353BCF1ADB900A0086A73D /* FirststepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirststepViewController.swift; sourceTree = "<group>"; };
 		6D353BD31ADB90200086A73D /* SecondstepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondstepViewController.swift; sourceTree = "<group>"; };
 		6D353BD71ADBB5ED0086A73D /* TextFieldEffects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TextFieldEffects; path = ../TextFieldEffects; sourceTree = "<group>"; };
+		6D40A2571B0ECE5800378877 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		6D473A3B1AE627A7006C68FF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Dococo/Crashlytics.framework; sourceTree = "<group>"; };
 		6D48E19A1AD8DEA100884C3A /* Dococo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dococo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D48E19E1AD8DEA100884C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,7 +148,6 @@
 		6D48E1B51AD8DEA100884C3A /* DococoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DococoTests.swift; sourceTree = "<group>"; };
 		6D48E1BF1AD8E21D00884C3A /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		6D7630471AE48DA700430CF8 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
-		6D7725E41B060087005376D6 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		6D7725E61B060093005376D6 /* targetballoon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetballoon@2x.png"; sourceTree = "<group>"; };
 		6D7725E81B06009F005376D6 /* userballoon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userballoon@2x.png"; sourceTree = "<group>"; };
 		6D7EC4F61ADD61B200364757 /* ThirdstepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdstepViewController.swift; sourceTree = "<group>"; };
@@ -178,16 +170,7 @@
 		6DD8D95D1AE7358300C04BD9 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		6DE1F99E1AD947B5002481E1 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		6DE1F9A81AD94B29002481E1 /* Dococo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Dococo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DE1F9AB1AD94B29002481E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DE1F9AC1AD94B29002481E1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		6DE1F9AD1AD94B29002481E1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		6DE1F9AF1AD94B29002481E1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		6DE1F9B11AD94B29002481E1 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		6DE1F9B31AD94B29002481E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DE1F9B71AD94B29002481E1 /* Dococo WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dococo WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DE1F9BD1AD94B29002481E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DE1F9BF1AD94B29002481E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		6DE1F9C11AD94B29002481E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DE9FB441AE0ECAA00C03464 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
 		6DE9FB451AE0ECAA00C03464 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
 		6DE9FB461AE0ECAA00C03464 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
@@ -305,8 +288,6 @@
 			children = (
 				6D48E19C1AD8DEA100884C3A /* Dococo */,
 				6D48E1B21AD8DEA100884C3A /* DococoTests */,
-				6DE1F9A91AD94B29002481E1 /* Dococo WatchKit Extension */,
-				6DE1F9BB1AD94B29002481E1 /* Dococo WatchKit App */,
 				6D48E19B1AD8DEA100884C3A /* Products */,
 				5C8554ACBC35CD4E50FD702D /* Pods */,
 				163FBDDB9579312F6CD33FDE /* Frameworks */,
@@ -344,14 +325,13 @@
 		6D48E19D1AD8DEA100884C3A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D40A2571B0ECE5800378877 /* refresh@2x.png */,
 				6DC67E2D1B03204200F8BF36 /* targetcellbackground5@2x.png */,
 				6DC67E2E1B03204200F8BF36 /* targetcellbackground6@2x.png */,
 				6DC67E2F1B03204200F8BF36 /* targetcellbackground6plus@3x.png */,
 				6DC67E301B03204200F8BF36 /* usercellbackground5@2x.png */,
 				6DC67E311B03204200F8BF36 /* usercellbackground6@2x.png */,
 				6DC67E321B03204200F8BF36 /* usercellbackground6plus@3x.png */,
-				6D7725E41B060087005376D6 /* refresh@2x.png */,
-				6D1D35D81B030BAC0019DC5B /* refresh@2x.png */,
 				6D7725E81B06009F005376D6 /* userballoon@2x.png */,
 				6D1D35D91B030BAC0019DC5B /* userballoon@2x.png */,
 				6D7725E61B060093005376D6 /* targetballoon@2x.png */,
@@ -418,45 +398,6 @@
 				6D353BCB1ADB8F150086A73D /* SignupViewController.swift */,
 			);
 			name = LoginSignup;
-			sourceTree = "<group>";
-		};
-		6DE1F9A91AD94B29002481E1 /* Dococo WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				6DE1F9AD1AD94B29002481E1 /* InterfaceController.swift */,
-				6DE1F9AF1AD94B29002481E1 /* NotificationController.swift */,
-				6DE1F9B11AD94B29002481E1 /* GlanceController.swift */,
-				6DE1F9B31AD94B29002481E1 /* Images.xcassets */,
-				6DE1F9AA1AD94B29002481E1 /* Supporting Files */,
-			);
-			path = "Dococo WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		6DE1F9AA1AD94B29002481E1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6DE1F9AB1AD94B29002481E1 /* Info.plist */,
-				6DE1F9AC1AD94B29002481E1 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6DE1F9BB1AD94B29002481E1 /* Dococo WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				6DE1F9BE1AD94B29002481E1 /* Interface.storyboard */,
-				6DE1F9C11AD94B29002481E1 /* Images.xcassets */,
-				6DE1F9BC1AD94B29002481E1 /* Supporting Files */,
-			);
-			path = "Dococo WatchKit App";
-			sourceTree = "<group>";
-		};
-		6DE1F9BC1AD94B29002481E1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6DE1F9BD1AD94B29002481E1 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +493,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -613,14 +557,13 @@
 				6DF093D81AD8E38300B44899 /* star_white.png in Resources */,
 				6DF093C61AD8E38300B44899 /* man1.jpg in Resources */,
 				6DF093E21AD8E38E00B44899 /* woman1.jpg in Resources */,
-				6D1D35DB1B030BAC0019DC5B /* refresh@2x.png in Resources */,
 				6DF093CE1AD8E38300B44899 /* man9.jpg in Resources */,
 				6D353BD81ADBB5ED0086A73D /* TextFieldEffects in Resources */,
 				6D1D35DD1B030BAC0019DC5B /* targetballoon@2x.png in Resources */,
-				6D7725E51B060087005376D6 /* refresh@2x.png in Resources */,
 				6DC67DF81B03179B00F8BF36 /* TargetCocoCell.xib in Resources */,
 				6DF093C81AD8E38300B44899 /* man3.jpg in Resources */,
 				6DF093E51AD8E38E00B44899 /* woman4.jpg in Resources */,
+				6D40A2581B0ECE5800378877 /* refresh@2x.png in Resources */,
 				6DC67E331B03204200F8BF36 /* targetcellbackground5@2x.png in Resources */,
 				6D48E1A71AD8DEA100884C3A /* Images.xcassets in Resources */,
 				6DC67E361B03204200F8BF36 /* usercellbackground5@2x.png in Resources */,
@@ -654,7 +597,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE1F9B41AD94B29002481E1 /* Images.xcassets in Resources */,
 				6DE1F9B81AD94B29002481E1 /* Dococo WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,8 +605,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE1F9C01AD94B29002481E1 /* Interface.storyboard in Resources */,
-				6DE1F9C21AD94B29002481E1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,9 +711,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE1F9B01AD94B29002481E1 /* NotificationController.swift in Sources */,
-				6DE1F9AE1AD94B29002481E1 /* InterfaceController.swift in Sources */,
-				6DE1F9B21AD94B29002481E1 /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,14 +749,6 @@
 				6D48E1A91AD8DEA100884C3A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		6DE1F9BE1AD94B29002481E1 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6DE1F9BF1AD94B29002481E1 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

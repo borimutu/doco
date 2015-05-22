@@ -179,17 +179,8 @@
                     <view key="view" contentMode="scaleToFill" id="T8A-ez-G98">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DmL-HK-Sj9">
-                                <rect key="frame" x="0.0" y="275" width="600" height="325"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="DmL-HK-Sj9" id="5YC-CA-evk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oh-3X-oTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,23 +251,9 @@
                     <view key="view" contentMode="scaleToFill" id="8HR-yv-teK">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="q8T-dK-YbP">
-                                <rect key="frame" x="0.0" y="269" width="600" height="331"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="yWd-9b-O6z" id="U67-32-RHq"/>
-                                    <outlet property="delegate" destination="yWd-9b-O6z" id="DTC-eR-D5D"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HEE-Xm-i7z"/>
-                    <connections>
-                        <outlet property="tableView" destination="q8T-dK-YbP" id="NBr-At-0DX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDK-Yr-Omh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
